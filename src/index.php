@@ -2,20 +2,16 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\OOP\PHP\BMW;
-use App\OOP\PHP\Car;
-use App\OOP\PHP\Mercedes;
-use App\OOP\PHP\Application;
+use App\OOP\PHP\ClientHTTP;
+use App\OOP\PHP\Client;
 
 
-$bmw = new BMW('BMW', 'X5', '100');
-$mercedes = new Mercedes('Mercedes', 'C300', '100');
+$client = new ClientHTTP('localhost', 'http://');
 
-
-
-$order1 = new Application('cairo', 'alexandria', 30);
-
-var_dump($order1->deliverOrder($bmw));
+var_dump($client->connect());
+var_dump($client->run());
+var_dump($client->go());
+var_dump($client->discoonnect());
 
 
 ?>
