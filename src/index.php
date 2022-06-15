@@ -2,16 +2,13 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\OOP\PHP\ClientHTTP;
-use App\OOP\PHP\Client;
+use App\OOP\PHP\Car;
+use App\OOP\PHP\BMW;
 
+use App\OOP\PHP\CarDashBoard;
 
-$client = new ClientHTTP('localhost', 'http://');
+$Car = new BMW('BMW', 'X5', '100km/h');
 
-var_dump($client->connect());
-var_dump($client->run());
-var_dump($client->go());
-var_dump($client->discoonnect());
+($Car->installDashBoard(new CarDashBoard( 10, 10, 10)));
 
-
-?>
+var_dump($Car->carInfo());
