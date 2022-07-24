@@ -2,13 +2,24 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\OOP\PHP\Car;
-use App\OOP\PHP\BMW;
+use App\OOP\PHP\Employee;
+use App\OOP\PHP\OrganizationSalary;
 
-use App\OOP\PHP\CarDashBoard;
 
-$Car = new BMW('BMW', 'X5', '100km/h');
+$mohamed = new App\OOP\PHP\Employee( 
+    'Mohamed',
+    25,
+    new App\OOP\PHP\OrganizationSalary(
+        4500,
+        0.2,
+        1000,
+        2,
+        30,
+        75,
+        20,
+        0.1
+    )
+);
 
-($Car->installDashBoard(new CarDashBoard( 10, 10, 10)));
 
-var_dump($Car->carInfo());
+var_dump($mohamed->getSalary()->calcSalary());

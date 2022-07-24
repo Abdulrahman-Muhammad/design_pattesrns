@@ -3,11 +3,11 @@
 namespace App\OOP\PHP;
 
 
-class Employee
+class SalarayEmployee
 {
     private string $name;
     private int $age;
-    private Salary $salary;
+    private int $salary;
 
     public function __construct(string $name, int $age, Salary $salary)
     {
@@ -26,8 +26,9 @@ class Employee
         return $this->age;
     }
 
-    public function getSalary(): Salary
+    public function getSalary(): int
     {
         return $this->salary;
     }
+
 }
